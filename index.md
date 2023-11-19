@@ -36,4 +36,20 @@
   }
   
 ```
-<p>The code fix with switching newArray and arr, also the return changes to newArray</p>
+<p>The code fix with switching newArray and arr, also the return changes to newArray:</p>
+
+```java
+
+  static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      newArray[i] = arr[arr.length-1-i];
+    }
+    return newArray;
+  }
+
+```
+<p>Success Test:</p>
+![Image](test_success.png)
+<h3>Describe why the fix addresses the issue:</h3>
+<p>The code before fix, inside the `for loop` the array `arr` is the one who changes. `newArray` is new created and it is empty. For every `i` the array `arr` is setting the value to `newArray` which are all 0s. After fixing the problem by switching their position, now `newArray` will store the integers in `arr` in a reverse order. At the end, I changed the `return arr` to `return newArray` to return the correct array result.</p>
